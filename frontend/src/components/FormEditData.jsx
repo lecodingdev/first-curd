@@ -15,7 +15,7 @@ const FormEditData = () => {
     useEffect(() => {
         const getDataById = async () => {
             try {
-                const response = await axios.get(`https://first-curd.vercel.app/mahasiswa/getData/${id}`)
+                const response = await axios.get(`http://localhost:3000/mahasiswa/getData/${id}`)
                 console.log(response);
                 setNPM(response.data.data.npm);
                 setNama(response.data.data.nama);
@@ -32,7 +32,7 @@ const FormEditData = () => {
         e.preventDefault();
     
         try {
-          await axios.put(`https://first-curd.vercel.app/mahasiswa/editData/${id}`, {
+          await axios.put(`http://localhost:3000/mahasiswa/editData/${id}`, {
             npm,
             nama,
             jurusan,

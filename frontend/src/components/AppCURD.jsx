@@ -11,7 +11,7 @@ const AppCURD = () => {
 // Get Data
     const getData = async () => {
         try {
-            const {data} = await axios.get('https://first-curd.vercel.app/mahasiswa/getData');
+            const {data} = await axios.get('http://localhost:3000/mahasiswa/getData');
             console.log(data.data);
             setDataMahasiswa(data.data)
         } catch (error) {
@@ -25,7 +25,7 @@ const AppCURD = () => {
 
     const deleteData = async (id) => {
         try {
-            const response = await axios.delete(`https://first-curd.vercel.app/mahasiswa/deleteData/${id}`)
+            const response = await axios.delete(`http://localhost:3000/mahasiswa/deleteData/${id}`)
             console.log(response);
             getData();
             toast.success("Data Berhasil dihapus.")
