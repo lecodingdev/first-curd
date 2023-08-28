@@ -11,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+const StudentModel = require('./models/studentModel')
+
 // Route
 const studentRoute = require('./routes/studentRoute');
 app.use("/mahasiswa", studentRoute);
@@ -18,10 +20,10 @@ app.use("/mahasiswa", studentRoute);
 app.post('/mahasiswa/addData', async (req, res) => {
     try {
         const { npm, nama, jurusan } = req.body
-        const book = new BookModel({
+        const student = new StudentModel({
             npm, nama, jurusan
         })
-        const data = await book.save()
+        const data = await student.save()
         return res.status(200).json ({
             msg: 'Ok',
             data
