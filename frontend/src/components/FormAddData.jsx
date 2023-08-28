@@ -16,7 +16,7 @@ const FormAddData = () => {
   const getData = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:3000/mahasiswa/getData"
+        "https://first-curd.vercel.app/mahasiswa/getData"
       );
       console.log(data.data);
       setDataMahasiswa(data.data);
@@ -40,7 +40,7 @@ const FormAddData = () => {
         }
       });
 
-      await axios.post("http://localhost:3000/mahasiswa/addData", {
+      await axios.post("https://first-curd.vercel.app/mahasiswa/addData", {
         npm,
         nama,
         jurusan,
